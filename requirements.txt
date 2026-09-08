@@ -1,0 +1,11 @@
+cxas>=0.0.16
+gdown>=4.4,<5           # cxas uses fuzzy= kwarg (added in 4.4, removed in 5+)
+opencv-python>=4.5
+pandas>=2.0
+matplotlib>=3.5
+pycocotools>=2.0
+numpy>=1.24
+scipy>=1.9
+pillow>=10.0
+torch>=2.0
+torchvision

@@ -1,0 +1,33 @@
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# generated dataset / build outputs
+synthfb_out/
+synthfb_*/
+mimic_fb_free_train.csv
+clean_pool.csv
+category_gallery*.png
+category_examples/
+category_examples_clean/
+
+# cut-paste pool (user-supplied, not redistributable — see cutouts/labels/README.md)
+cutouts/labels/*/
+cutouts/*.json
+
+# cxas anatomy mask cache (~250 KB per source image)
+.cache_cxas/
+.cache_purity/
+
+# jupyter
+.ipynb_checkpoints/
+
+# IDE / editor / OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
