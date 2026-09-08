@@ -1,10 +1,12 @@
 # CXR_SynthFB — Anatomy-Guided Foreign-Object Insertion for Chest X-Rays
 
-Reimplementation + extensions of the data generation pipeline from:
+Data generation pipeline for:
 
-> Seibold, Kalisch, Heine, Reiß, Kleesiek.
-> *Foreign Object Segmentation in Chest X-Rays through Anatomy-Guided Shape Insertion.*
-> arXiv:2501.12022 (2025).
+> Constantin Seibold, David Vinu, Matthias A. Fink.
+> *Synthetic-Trained Class-Agnostic Proposals for Foreign-Object Localization in Chest X-rays.*
+> ECCV 2026 Workshop on Data Curation & Augmentation in Medical Imaging (DCA-MI), oral.
+> Diagnostic and Interventional Radiology, University Clinic Heidelberg, Germany.
+> [OpenReview](https://openreview.net/forum?id=RoWwewngwy)
 
 This repo produces a **119-category COCO-format instance segmentation dataset** of synthetic chest X-rays containing foreign bodies (FBs) and support devices, generated from a clean (FB-free) subset of MIMIC-CXR via anatomy-guided shape insertion.
 
@@ -211,18 +213,6 @@ Config surface (set by the wrappers, overridable): `SYNTHFB_N`, `SYNTHFB_MAX_ANN
 `SYNTHFB_PNG_COMPRESS`, `SYNTHFB_PLACEMENT` (anatomy|fallback|random_body|random_general),
 `SYNTHFB_CLASS_FRAC`, `SYNTHFB_ISOLATE` (render exactly one device family per image).
 
-Note on the paper: the original paper used 9 primitive shapes + cut-paste only
-(~13 categories). This implementation extends that to 119 categories with anatomy-aware
-placement, lateralization priors, tip-position priors, patient archetypes, and
-physics-based rendering.
-
-## What's NOT included
-
-- MIMIC-CXR images (credentialed data — bring your own copy; the shipped pool CSV lists
-  file names only).
-- The cut-paste cutout pool (see above).
-- Training the instance segmentation networks. This repo only generates the dataset.
-
 ## License
 
 MIT (see `LICENSE`).
@@ -232,10 +222,11 @@ MIT (see `LICENSE`).
 If you use this, please cite:
 
 ```bibtex
-@article{seibold2025synthfb,
-  title={Foreign Object Segmentation in Chest X-Rays through Anatomy-Guided Shape Insertion},
-  author={Seibold, Constantin and Kalisch, Hamza and Heine, Lukas and Rei{\ss}, Simon and Kleesiek, Jens},
-  journal={arXiv preprint arXiv:2501.12022},
-  year={2025}
+@inproceedings{seibold2026synthfb,
+  title={Synthetic-Trained Class-Agnostic Proposals for Foreign-Object Localization in Chest X-rays},
+  author={Seibold, Constantin and Vinu, David and Fink, Matthias A.},
+  booktitle={ECCV 2026 Workshop on Data Curation and Augmentation in Medical Imaging (DCA-MI)},
+  year={2026},
+  url={https://openreview.net/forum?id=RoWwewngwy}
 }
 ```
