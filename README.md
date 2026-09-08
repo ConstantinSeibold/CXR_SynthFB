@@ -1,4 +1,4 @@
-# CXR_SynthFB — Anatomy-Guided Foreign-Object Insertion for Chest X-Rays
+# Anatomy-Guided Foreign-Object Insertion for Chest X-Rays
 
 Data generation pipeline for:
 
